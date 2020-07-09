@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HelloComponent } from './hello/hello.component';
+import { RootComponent } from './root/root.component';
 import { MovieslistComponent } from './movieslist/movieslist.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { LayoutComponent } from './layout/layout.component';
 @NgModule({
   declarations: [
-    HelloComponent,
+    RootComponent,
     MovieslistComponent,
+    NavbarComponent,
+    FooterComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
   ],
   providers: [],
-  bootstrap: [HelloComponent]
+  bootstrap: [RootComponent]
 })
 export class AppModule { }

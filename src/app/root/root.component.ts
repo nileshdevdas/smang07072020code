@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-hello',
-  templateUrl: './hello.component.html',
-  styleUrls: ['./hello.component.css']
+  selector: 'app-root',
+  templateUrl: './root.component.html',
+  styleUrls: ['./root.component.css']
 })
-export class HelloComponent implements OnInit {
+export class RootComponent implements OnInit {
 
   constructor() { }
   message = 'Hello from Nilesh component';
