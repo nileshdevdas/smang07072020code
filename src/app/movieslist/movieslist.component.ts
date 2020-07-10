@@ -12,13 +12,16 @@ export class MovieslistComponent implements OnInit {
   handleReload() {
     console.log('From MoviesList');
     // promisory subscriptions
-    this.fms.getMovies().subscribe((data) => {
-      this.movies = data;
-    });
   }
   constructor(public fms: FetchmoviesService) { }
 
   ngOnInit() {
+    setInterval(() => {
+      this.fms.getMovies().subscribe((data) => {
+        this.movies = data;
+      });
+      console.log("Refreshing ..........")
+    }, 5000);
   }
 
 }
