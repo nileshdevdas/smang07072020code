@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
-
+import { FetchmoviesService } from '../fetchmovies.service';
 @Component({
   selector: 'app-movieslist',
   templateUrl: './movieslist.component.html',
@@ -8,20 +8,14 @@ import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 export class MovieslistComponent implements OnInit {
   // movies is state stored in the component which can displayed in the page
   expressdate = new Date();
+  movies = [];
 
-  movies = [
-    'Harry Potter',
-    'Living Daylights',
-    'Chronicles of Narnia',
-    'Sherlock Holmes'
-  ];
   handleReload() {
-    this.movies.push('Movies1');
+    console.log("From MoviesList ");
+    this.movies = this.fms.getMovies();
   }
-  constructor() { }
-  // components lifecycle
+  constructor(public fms: FetchmoviesService) { }
   ngOnInit() {
-    // call back which give gurantee that component is initialized 
   }
 
 }
