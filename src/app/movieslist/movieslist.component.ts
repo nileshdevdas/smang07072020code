@@ -9,12 +9,15 @@ export class MovieslistComponent implements OnInit {
   // movies is state stored in the component which can displayed in the page
   expressdate = new Date();
   movies = [];
-
   handleReload() {
-    console.log("From MoviesList ");
-    this.movies = this.fms.getMovies();
+    console.log('From MoviesList');
+    // promisory subscriptions
+    this.fms.getMovies().subscribe((data) => {
+      this.movies = data;
+    });
   }
   constructor(public fms: FetchmoviesService) { }
+
   ngOnInit() {
   }
 

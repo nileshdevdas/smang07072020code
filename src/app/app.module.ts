@@ -5,6 +5,7 @@ import { MovieslistComponent } from './movieslist/movieslist.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     RootComponent,
@@ -15,6 +16,7 @@ import { LayoutComponent } from './layout/layout.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [RootComponent]
