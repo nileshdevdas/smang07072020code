@@ -1,5 +1,5 @@
-import {Component, OnInit, OnDestroy, OnChanges} from '@angular/core';
-import {FetchmoviesService} from '../fetchmovies.service';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
+import { FetchmoviesService } from '../fetchmovies.service';
 
 @Component({
   selector: 'app-movieslist',
@@ -10,6 +10,7 @@ export class MovieslistComponent implements OnInit {
   // movies is state stored in the component which can displayed in the page
   expressdate = new Date();
   movies = [];
+  gold = null;
 
   handleReload() {
     console.log('From MoviesList');
@@ -26,6 +27,13 @@ export class MovieslistComponent implements OnInit {
       });
       console.log('Refreshing ..........')
     }, 5000);
+  }
+
+  setGold() {
+    this.gold = true;
+  }
+  noGold() {
+    this.gold = null;
   }
 
 }

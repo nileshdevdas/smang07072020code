@@ -18,6 +18,13 @@ import { OopsComponent } from './oops/oops.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 // ----------------------------------------------------------- //
+
+
+// ----------------------------- for forms ----------------------//
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+// ----------------------------- for forms ---------------------//
+
 @NgModule({
   declarations: [
     RootComponent,
@@ -32,11 +39,13 @@ import { routes } from './app.routes';
     HelpComponent,
     HomeComponent,
     OopsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [RootComponent]

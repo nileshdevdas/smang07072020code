@@ -1,14 +1,23 @@
 <table class="table table-striped table-bordered">
   <thead>
-  <tr>
-    <th scope="col">MovieName</th>
-    <th>Release Date</th>
-  </tr>
+    <tr>
+      <th scope="col">MovieName</th>
+      <th>Release Date</th>
+    </tr>
   </thead>
   <tr *ngFor="let movie of movies">
     <td>{{movie | uppercase }} {{1000 | currency:"GBP"}}</td>
     <td>{{expressdate | date:'dd-MM-y  MM hh-mm-ss'}}</td>
   </tr>
 </table>
-
+<div>
+  <div *ngIf="gold;else notgold">
+    <span class="alert alert-warning"> You are a Gold Member.....</span>
+  </div>
+  <ng-template #notgold>
+    <div>You are not a Gold Member !!!!</div>
+  </ng-template>
+</div>
+<button (click)="setGold()" class="btn btn-success">Gold</button>
+<button (click)="noGold()" class="btn btn-danger">NoGold</button>
 <button (click)="handleReload()" class="btn btn-primary">Reload</button>
