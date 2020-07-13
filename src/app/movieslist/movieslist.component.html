@@ -1,9 +1,9 @@
 <table class="table table-striped table-bordered">
   <thead>
-    <tr>
-      <th scope="col">MovieName</th>
-      <th>Release Date</th>
-    </tr>
+  <tr>
+    <th scope="col">MovieName</th>
+    <th>Release Date</th>
+  </tr>
   </thead>
   <tr *ngFor="let movie of movies">
     <td>{{movie | uppercase }} {{1000 | currency:"GBP"}}</td>
