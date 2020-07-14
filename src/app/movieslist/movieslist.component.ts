@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { FetchmoviesService } from '../fetchmovies.service';
+import { CommunicatorService } from '../communicator.service';
 
 @Component({
   selector: 'app-movieslist',
@@ -17,10 +18,14 @@ export class MovieslistComponent implements OnInit {
     // promisory subscriptions
   }
 
-  constructor(public fms: FetchmoviesService) {
+  constructor(public fms: FetchmoviesService, public cms: CommunicatorService) {
   }
 
   ngOnInit() {
+    this.cms.getSubscriber().subscribe((data) => {
+      console.log("XXXXXXXXXXXXXXXXXXXXxxx");
+      console.log(data);
+    });
     setInterval(() => {
       this.fms.getMovies().subscribe((data) => {
         this.movies = data;

@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {FetchmoviesService} from '../fetchmovies.service';
+import { Component, OnInit } from '@angular/core';
+import { FetchmoviesService } from '../fetchmovies.service';
+import { CommunicatorService } from '../communicator.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,12 +9,10 @@ import {FetchmoviesService} from '../fetchmovies.service';
 })
 export class NavbarComponent implements OnInit {
   a = 10;
-
-  constructor(public fms: FetchmoviesService) {
+  loggedin;
+  constructor(public fms: FetchmoviesService, public cms: CommunicatorService) {
   }
-
   ngOnInit() {
-    console.log(this.fms.getMovies(), " From Navigator");
+    this.loggedin = sessionStorage.getItem('loginUser')
   }
-
 }
