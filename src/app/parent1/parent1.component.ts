@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class Parent1Component implements OnInit {
 
   mygenre;
+  childData;
   constructor() { }
 
+  onChildChange(event) {
+    console.log("Event ", event);
+    this.childData = event;
+  }
   ngOnInit() {
     setInterval(() => {
       this.mygenre = Math.random();
