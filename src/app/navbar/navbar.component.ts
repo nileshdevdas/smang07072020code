@@ -5,6 +5,7 @@ import { LoginService } from '../login.service';
 import { AuthService } from '../auth.service';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Auth0Service } from '../auth0.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,7 @@ export class NavbarComponent implements OnInit {
   a = 10;
   loggedin;
   name = of([1, 2, 3, 4, 5, 6, 10, 20, 30, 40]);
-  constructor(public loginService: LoginService, public auth: AuthService) {
+  constructor(public loginService: LoginService, public auth: Auth0Service) {
   }
   ngOnInit() {
     this.loggedin = sessionStorage.getItem('loginUser');

@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent1.component.css']
 })
 export class Parent1Component implements OnInit {
-
   mygenre;
   childData;
   constructor() { }
 
   onChildChange(event) {
-    console.log("Event ", event);
+    console.log('Event ', event);
     this.childData = event;
   }
   ngOnInit() {
